@@ -88,7 +88,6 @@ export default {
     },
     methods: {
         startConnection () {
-            console.log('starting connection');
             this.webSocket = new WebSocket(process.env.VUE_APP_WEB_SOCKET_URL);
 
             this.webSocket.onopen = () => {
@@ -121,8 +120,6 @@ export default {
                 x: xPosition,
                 y: yPosition
             }
-
-            console.log(moveData);
 
             this.webSocket.send(
                 JSON.stringify(moveData)
