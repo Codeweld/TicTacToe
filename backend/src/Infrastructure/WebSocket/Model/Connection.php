@@ -17,6 +17,7 @@ final class Connection implements ConnectionInterface
         private ExternalConnectionInterface $externalConnection,
     ) {
         $this->identifier = Uuid::v4()->toRfc4122();
+        /** @phpstan-ignore-next-line */
         $this->originalIdentifier = $this->externalConnection->resourceId;
     }
 

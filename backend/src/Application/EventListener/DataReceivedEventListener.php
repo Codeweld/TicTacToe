@@ -43,6 +43,9 @@ final class DataReceivedEventListener
                 $decodedMessage->y,
                 $connectionIdentifier,
             ),
+            default => throw new \RuntimeException(
+                'Unsupported action requested',
+            ),
         };
 
         if ($dto instanceof StartGame) {

@@ -12,7 +12,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 final class StartServerCommand extends Command
 {
-    const DEFAULT_PORT = 8020;
+    public const DEFAULT_PORT = 8020;
 
     protected static $defaultName = 'ttt:server:start';
 

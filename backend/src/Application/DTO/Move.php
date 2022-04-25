@@ -7,9 +7,9 @@ namespace App\Application\DTO;
 final class Move
 {
     public function __construct(
-      private int $x,
-      private int $y,
-      private string $connectionIdentifier,
+        private int $x,
+        private int $y,
+        private string $connectionIdentifier,
     ) {
     }
 

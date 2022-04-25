@@ -1,0 +1,4 @@
+includes:
+    - %currentWorkingDirectory%/vendor/phpstan/phpstan/conf/bleedingEdge.neon
+parameters:
+    reportUnmatchedIgnoredErrors: true

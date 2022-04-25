@@ -11,6 +11,9 @@ Start server:
 * composer install (only for the first run)
 * bin/console ttt:server:start
 
+To run all checks (static analysis, code-style, tests),
+please run `composer check` command inside the `backend` module 
+
 Frontend (Vue)
 ----------------------------
 Requirements:

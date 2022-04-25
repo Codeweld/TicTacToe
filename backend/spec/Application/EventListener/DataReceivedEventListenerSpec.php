@@ -49,4 +49,17 @@ final class DataReceivedEventListenerSpec extends ObjectBehavior
 
         $this->onDataReceived($dataReceivedEvent);
     }
+
+    function it_listens_to_data_received_event_and_throws_runtime_exception_for_unsupported_action(): void
+    {
+        $dataReceivedEvent = new DataReceivedEvent(
+            '{"command":"Unsupported"}',
+            '12345',
+        );
+
+        $this
+            ->shouldThrow(\RuntimeException::class)
+            ->during('onDataReceived', [$dataReceivedEvent])
+        ;
+    }
 }

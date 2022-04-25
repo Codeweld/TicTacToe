@@ -276,6 +276,5 @@ final class Table implements TableInterface
 
             $player->assignDefeat();
         }
-
     }
 }

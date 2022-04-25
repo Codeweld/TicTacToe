@@ -5,16 +5,14 @@ declare(strict_types=1);
 namespace App\Infrastructure\Serializer;
 
 use App\Application\SerializerInterface;
-use Symfony\Component\Serializer\SerializerInterface as BaseSerializerInterface;
 use Symfony\Component\Serializer\Serializer as BaseSerializer;
 
 final class Serializer implements SerializerInterface
 {
-    /** @var BaseSerializerInterface&BaseSerializer */
-    private BaseSerializerInterface $serializer;
+    private BaseSerializer $serializer;
 
     public function __construct(
-        BaseSerializerInterface $serializer,
+        BaseSerializer $serializer,
     ) {
         $this->serializer = $serializer;
     }

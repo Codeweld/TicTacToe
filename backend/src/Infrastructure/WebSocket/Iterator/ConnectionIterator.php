@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\WebSocket\Iterator;
 
-use App\Infrastructure\WebSocket\Model\Connection;
 use App\Infrastructure\WebSocket\Model\ConnectionInterface;
 use Ratchet\ConnectionInterface as ExternalConnectionInterface;
 
 final class ConnectionIterator implements \Iterator
 {
-    /** @var array|Connection[] */
+    /** @var array|ConnectionInterface[] */
     private array $connections = [];
 
     private int $position = 0;
@@ -65,6 +64,7 @@ final class ConnectionIterator implements \Iterator
     public function removeByExternalConnection(ExternalConnectionInterface $externalConnection): void
     {
         foreach ($this->connections as $key => $connection) {
+            /** @phpstan-ignore-next-line */
             if ($connection->getOriginalIdentifier() === $externalConnection->resourceId) {
                 unset($this->connections[$key]);
 
@@ -78,6 +78,7 @@ final class ConnectionIterator implements \Iterator
     public function getByExternalConnection(ExternalConnectionInterface $externalConnection): ?ConnectionInterface
     {
         foreach ($this->connections as $connection) {
+            /** @phpstan-ignore-next-line */
             if ($connection->getOriginalIdentifier() === $externalConnection->resourceId) {
                 return $connection;
             }
@@ -103,7 +104,6 @@ final class ConnectionIterator implements \Iterator
         $connection = $this->getByIdentifier($identifier);
 
         return $connection?->getExternalConnection();
-
     }
 
     public function count(): int

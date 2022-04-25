@@ -24,6 +24,6 @@ final class EventSerializer implements EventSerializerInterface
             unset($normalizedData['connectionIdentifier']);
         }
 
-        return json_encode($normalizedData, JSON_THROW_ON_ERROR);
+        return json_encode($normalizedData, \JSON_THROW_ON_ERROR);
     }
 }

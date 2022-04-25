@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 
 final class TableTest extends TestCase
 {
-    public function test_resolving_a_won_game_for_x_on_x_axis(): void
+    public function test_resolving_a_won_game_by_human_player_for_x_on_x_axis(): void
     {
         $table = new Table(3);
 
@@ -37,7 +37,7 @@ final class TableTest extends TestCase
         $this->assertSame(PlayerInterface::RESULT_WIN, $humanPlayer->getResult());
     }
 
-    public function test_resolving_a_won_game_for_x_on_x_axis_by_cpu(): void
+    public function test_resolving_a_won_game_by_cpu_for_x_on_x_axis(): void
     {
         $table = new Table(3);
 

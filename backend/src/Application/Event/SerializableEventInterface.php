@@ -6,4 +6,5 @@ namespace App\Application\Event;
 
 interface SerializableEventInterface
 {
+    public function getConnectionIdentifier(): string;
 }

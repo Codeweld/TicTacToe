@@ -9,7 +9,7 @@ use App\Domain\Model\PlayerInterface;
 final class GameEnded implements SerializableEventInterface
 {
     public function __construct(
-        private string $playerResult,
+        private ?string $playerResult,
         private string $connectionIdentifier,
     ) {
     }
@@ -22,7 +22,7 @@ final class GameEnded implements SerializableEventInterface
         );
     }
 
-    public function getPlayerResult(): string
+    public function getPlayerResult(): ?string
     {
         return $this->playerResult;
     }
