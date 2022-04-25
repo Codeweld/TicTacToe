@@ -47,20 +47,6 @@ final class TableIterator implements \Iterator
         ++$this->tablesCount;
     }
 
-//    public function remove(TableInterface $table): void
-//    {
-//        foreach ($this->tables as $key => $element) {
-//            if ($element->resourceId === $table->resourceId) {
-//                unset($this->tables[$key]);
-//
-//                --$this->tablesCount;
-//
-//                break;
-//            }
-//        }
-//    }
-//
-
     public function getTableByPlayerConnectionIdentifier(
         string $connectionIdentifier,
     ): ?TableInterface {

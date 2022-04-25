@@ -46,19 +46,6 @@ final class PlayerIterator implements \Iterator
         ++$this->playersCount;
     }
 
-//    public function remove(PlayerInterface $player): void
-//    {
-//        foreach ($this->players as $key => $element) {
-//            if ($element->resourceId === $player->resourceId) {
-//                unset($this->players[$key]);
-//
-//                --$this->playersCount;
-//
-//                break;
-//            }
-//        }
-//    }
-//
     public function getPlayerByConnectionIdentifier(
         string $connectionIdentifier,
     ): ?PlayerInterface {
